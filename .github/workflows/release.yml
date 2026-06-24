@@ -47,7 +47,7 @@ jobs:
         if: ${{ env.HOMEBREW_TAP_TOKEN != '' }}
         uses: actions/checkout@v7
         with:
-          repository: Xsir0/homebrew-tap
+          repository: Xsir0/Xsir0-homebrew-tap
           token: ${{ env.HOMEBREW_TAP_TOKEN }}
           path: homebrew-tap
 

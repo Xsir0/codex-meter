@@ -39,10 +39,12 @@ curl -fsSL https://github.com/Xsir0/codex-meter/releases/latest/download/install
 ### Homebrew
 
 ```bash
-brew install Xsir0/tap/codex-meter
+brew tap Xsir0/Xsir0-homebrew-tap https://github.com/Xsir0/Xsir0-homebrew-tap.git
+brew trust xsir0/xsir0-homebrew-tap
+brew install codex-meter
 ```
 
-The tap repository must be published first. See [Homebrew setup](docs/homebrew.md).
+See [Homebrew setup](docs/homebrew.md) for tap maintenance notes.
 
 ### Go
 
