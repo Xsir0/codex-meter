@@ -1,7 +1,7 @@
 #!/bin/sh
 set -eu
 
-VERSION="${VERSION:-0.3.0}"
+VERSION="${VERSION:-0.3.1}"
 REPOSITORY="${REPOSITORY:-Xsir0/codex-meter}"
 ROOT=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
 DIST="$ROOT/dist"
@@ -95,6 +95,9 @@ rm -rf "$all_stage"
 
 write_installer "$OUT/install.sh"
 chmod 0755 "$OUT/install.sh"
+
+VERSION="$VERSION" REPOSITORY="$REPOSITORY" \
+  "$ROOT/scripts/generate-homebrew-formula.sh" "$OUT/codex-meter.rb"
 
 cd "$OUT"
 if command -v sha256sum >/dev/null 2>&1; then

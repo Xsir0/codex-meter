@@ -11,6 +11,8 @@ permissions:
 jobs:
   release:
     runs-on: ubuntu-latest
+    env:
+      HOMEBREW_TAP_TOKEN: ${{ secrets.HOMEBREW_TAP_TOKEN }}
     steps:
       - name: Check out source
         uses: actions/checkout@v7
@@ -40,3 +42,27 @@ jobs:
             --verify-tag \
             --generate-notes \
             --title "$GITHUB_REF_NAME"
+
+      - name: Check out Homebrew tap
+        if: ${{ env.HOMEBREW_TAP_TOKEN != '' }}
+        uses: actions/checkout@v7
+        with:
+          repository: Xsir0/homebrew-tap
+          token: ${{ env.HOMEBREW_TAP_TOKEN }}
+          path: homebrew-tap
+
+      - name: Update Homebrew tap formula
+        if: ${{ env.HOMEBREW_TAP_TOKEN != '' }}
+        run: |
+          mkdir -p homebrew-tap/Formula
+          cp release/codex-meter.rb homebrew-tap/Formula/codex-meter.rb
+          cd homebrew-tap
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Formula/codex-meter.rb
+          if git diff --cached --quiet; then
+            echo "Homebrew formula is already up to date."
+          else
+            git commit -m "Update codex-meter to ${GITHUB_REF_NAME}"
+            git push
+          fi

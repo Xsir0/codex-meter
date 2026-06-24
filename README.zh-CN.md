@@ -36,6 +36,14 @@ curl -fsSL https://github.com/Xsir0/codex-meter/releases/latest/download/install
 curl -fsSL https://github.com/Xsir0/codex-meter/releases/latest/download/install.sh | sh -s -- --uninstall
 ```
 
+### Homebrew
+
+```bash
+brew install Xsir0/tap/codex-meter
+```
+
+需要先发布 tap 仓库。见 [Homebrew 配置说明](docs/homebrew.md)。
+
 ### Go
 
 ```bash

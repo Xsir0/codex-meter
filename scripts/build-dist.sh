@@ -1,7 +1,7 @@
 #!/bin/sh
 set -eu
 
-VERSION="${VERSION:-0.3.0}"
+VERSION="${VERSION:-0.3.1}"
 COMMIT="${COMMIT:-none}"
 DATE="${DATE:-$(date -u +%Y-%m-%dT%H:%M:%SZ)}"
 ROOT=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
@@ -20,7 +20,7 @@ build() {
   (
     cd "$ROOT"
     CGO_ENABLED=0 GOOS="$os" GOARCH="$arch" \
-      go build -trimpath -ldflags "$LDFLAGS" -o "$output" ./cmd/codex-meter
+      go build -trimpath -buildvcs=false -ldflags "$LDFLAGS" -o "$output" ./cmd/codex-meter
   )
 }
 

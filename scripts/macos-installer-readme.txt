@@ -10,6 +10,5 @@ Recommended package contents:
 
 The installer detects Apple Silicon or Intel automatically.
 
-For the simplest download, use the standalone
-codex-meter-v0.3.0-macos-installer.command release asset instead. It contains
-both Mac binaries and does not need to be unzipped.
+For the simplest download, use the standalone macOS installer release asset
+instead. It contains both Mac binaries and does not need to be unzipped.

@@ -1,6 +1,6 @@
 SHELL := /bin/sh
 
-VERSION ?= 0.3.0
+VERSION ?= 0.3.1
 COMMIT ?= $(shell git rev-parse --short HEAD 2>/dev/null || printf none)
 DATE ?= $(shell date -u +%Y-%m-%dT%H:%M:%SZ)
 LDFLAGS := -s -w -X main.version=$(VERSION) -X main.commit=$(COMMIT) -X main.date=$(DATE)
@@ -9,7 +9,7 @@ LDFLAGS := -s -w -X main.version=$(VERSION) -X main.commit=$(COMMIT) -X main.dat
 
 build:
 	mkdir -p bin
-	CGO_ENABLED=0 go build -trimpath -ldflags "$(LDFLAGS)" -o bin/codex-meter ./cmd/codex-meter
+	CGO_ENABLED=0 go build -trimpath -buildvcs=false -ldflags "$(LDFLAGS)" -o bin/codex-meter ./cmd/codex-meter
 
 test:
 	go test ./...
