@@ -1,0 +1,45 @@
+╭─ CODEX METER ────────────────────────────────────────────────────────────╮
+│ Codex, Spark, and reset-credit usage at a glance                         │
+│ Updated: 2026-06-24 12:30:00 UTC                                         │
+│ Read-only: does not modify quotas, redeem credits, or upload             │
+│ credentials.                                                             │
+╰──────────────────────────────────────────────────────────────────────────╯
+
+╭─ ACCOUNT ────────────────────────────────────────────────────────────────╮
+│ Account  acct…8f2a    Plan  Pro                                          │
+│ Credentials  /Users/demo/.codex/auth.json                                │
+│ Email  d••••@example.com                                                 │
+│ Authentication  ChatGPT OAuth · ✓ Parsed · Token expires in 42 minutes   │
+╰──────────────────────────────────────────────────────────────────────────╯
+
+╭─ USAGE ──────────────────────────────────────────────────────────────────╮
+│ CODEX USAGE                                                              │
+│ 5-hour quota                                                             │
+│   [█████████████████░░░░░░░]  72% remaining                              │
+│   28% used · Resets in 1 hour 14 minutes (2026-06-24 13:44:00 UTC) ·     │
+│ Window 5h                                                                │
+│                                                                          │
+│ Weekly quota                                                             │
+│   [██████████░░░░░░░░░░░░░░]  41% remaining                              │
+│   59% used · Resets in 3 days 8 hours (2026-06-27 20:30:00 UTC) ·        │
+│ Window 7d                                                                │
+├──────────────────────────────────────────────────────────────────────────┤
+│ SPARK USAGE                                                              │
+│ 5-hour quota                                                             │
+│   [█████████████████████░░░]  88% remaining                              │
+│   12% used · Resets in 2 hours (2026-06-24 14:30:00 UTC) · Window 5h     │
+│                                                                          │
+│ Weekly quota                                                             │
+│   [██████████████████░░░░░░]  76% remaining                              │
+│   24% used · Resets in 5 days (2026-06-29 12:30:00 UTC) · Window 7d      │
+╰──────────────────────────────────────────────────────────────────────────╯
+
+╭─ RESET CREDITS ──────────────────────────────────────────────────────────╮
+│ Available  1    Records  1                                               │
+│                                                                          │
+│ 1. ! Codex rate-limit reset  [Expires this week]                         │
+│    Status Available · Type Rate-limit reset                              │
+│    Description Restores access after a rate-limit window is exhausted.   │
+│    Granted 2026-06-20 08:00:00 UTC                                       │
+│    Expires 2026-06-29 23:30:00 UTC (in 5 days 11 hours)                  │
+╰──────────────────────────────────────────────────────────────────────────╯
